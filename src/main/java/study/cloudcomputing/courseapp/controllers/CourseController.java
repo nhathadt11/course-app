@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import study.cloudcomputing.courseapp.entities.Course;
-import study.cloudcomputing.courseapp.errors.InvalidIdException;
 import study.cloudcomputing.courseapp.services.CourseService;
 import study.cloudcomputing.courseapp.validations.PathValidator;
 
