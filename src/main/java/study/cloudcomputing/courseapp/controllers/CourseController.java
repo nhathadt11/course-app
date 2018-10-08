@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import study.cloudcomputing.courseapp.entities.Course;
 import study.cloudcomputing.courseapp.errors.InvalidIdException;
 import study.cloudcomputing.courseapp.services.CourseService;
+import study.cloudcomputing.courseapp.validations.PathValidator;
 
 import java.net.URI;
 import java.util.List;
@@ -26,6 +27,15 @@ public class CourseController {
     return ResponseEntity.ok(courseList);
   }
 
+  @GetMapping("{id}")
+  public ResponseEntity<Course> findById(@PathVariable String id) {
+    long systemId = PathValidator.requireId(id);
+
+    Course found = courseService.findById(systemId);
+
+    return ResponseEntity.ok(found);
+  }
+
   @PostMapping
   public ResponseEntity<Course> create(Course course) {
     Course created = courseService.create(course);
@@ -40,11 +50,9 @@ public class CourseController {
 
   @DeleteMapping("{id}")
   public ResponseEntity<Course> delete(@PathVariable String id) {
-    if (id.matches("^\\d+$")) {
-      throw new InvalidIdException();
-    }
+    long systemId = PathValidator.requireId(id);
 
-    courseService.delete(Long.parseLong(id));
+    courseService.delete(systemId);
 
     return ResponseEntity
         .noContent()

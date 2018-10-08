@@ -1,6 +1,7 @@
 package study.cloudcomputing.courseapp.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import study.cloudcomputing.courseapp.entities.Course;
 import study.cloudcomputing.courseapp.errors.CourseNotFoundException;
@@ -19,6 +20,12 @@ public class CourseService {
 
   public List<Course> findAll() {
     return courseRepository.findAll();
+  }
+
+  public Course findById(long id) {
+    return courseRepository
+        .findById(id)
+        .orElseThrow(CourseNotFoundException::new);
   }
 
   public Course create(Course course) {
