@@ -15,6 +15,7 @@ public class Course {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+  private String code;
   private String name;
   private long categoryId;
   private long subCategoryId;
