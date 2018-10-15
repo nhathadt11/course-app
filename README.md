@@ -1,4 +1,4 @@
-#Course-app
+# Course-app
 A simple course management app written in java with Spring Boot support and Heroku deployment.
 ## Prerequisites
 - JDK 1.8 or above
