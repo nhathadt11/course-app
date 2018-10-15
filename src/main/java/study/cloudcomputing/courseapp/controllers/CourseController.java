@@ -36,7 +36,7 @@ public class CourseController {
   }
 
   @PostMapping
-  public ResponseEntity<Course> create(Course course) {
+  public ResponseEntity<Course> create(@RequestBody Course course) {
     Course created = courseService.create(course);
     return ResponseEntity.created(URI.create("/courses")).body(created);
   }
