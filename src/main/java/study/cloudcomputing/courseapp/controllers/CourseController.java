@@ -42,7 +42,7 @@ public class CourseController {
   }
 
   @PutMapping
-  public ResponseEntity<Course> update(Course course) {
+  public ResponseEntity<Course> update(@RequestBody Course course) {
     Course updated = courseService.update(course);
     return ResponseEntity.ok(updated);
   }
