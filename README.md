@@ -1,10 +1,10 @@
 # Course-app
 A simple course management app written in java with Spring Boot support and Heroku deployment.
 ## Prerequisites
-- JDK 1.8 or above
-- Maven
-- Heroku CLI
-- Postgresql
+- [JDK 1.8 or above](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- [Maven](https://maven.apache.org/)
+- [Heroku CLI](https://heroku.com/)
+- [Postgresql](https://heroku.com/)
 ## Local run
 
 - Create a custom .env file (e.g .env.dev ) containing variables that will be later used by Heroku. An example of its content:
